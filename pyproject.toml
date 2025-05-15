@@ -33,6 +33,7 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "diff-gaussian-rasterization",
     "simple-knn",
+    "av>=14.3.0",
 ]
 
 [tool.uv.sources]
