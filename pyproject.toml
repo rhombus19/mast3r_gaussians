@@ -1,0 +1,52 @@
+[project]
+name = "wild-gaussian-splatting"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch",
+    "torchvision",
+    "camtools==0.1.4",
+    "einops==0.7.0",
+    "ipywidgets==8.0.2",
+    "jupyterlab==3.4.2",
+    "lpips==0.1.4",
+    "omegaconf==2.3.0",
+    "pillow==10.0.1",
+    "plyfile==1.0.1",
+    "pytorch-lightning==2.1.0",
+    "pyyaml==6.0.1",
+    "sql>=2022.4.0",
+    "tensorboard==2.15.0",
+    "tqdm==4.66.1",
+    "transformers==4.35.2",
+    "lovely-tensors==0.1.15",
+    "roma>=1.5.2.1",
+    "gradio>=5.29.0",
+    "matplotlib>=3.10.3",
+    "opencv-python>=4.11.0.86",
+    "scipy>=1.15.3",
+    "trimesh>=4.6.9",
+    "pyglet<2",
+    "huggingface-hub[torch]>=0.22",
+    "scikit-learn>=1.6.1",
+    "diff-gaussian-rasterization",
+    "simple-knn",
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu121", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+torchvision = [
+  { index = "pytorch-cu121", marker = "sys_platform == 'linux' or sys_platform == 'win32'" },
+]
+diff-gaussian-rasterization = { path = "gaussian-splatting/submodules/diff-gaussian-rasterization" }
+simple-knn = { path = "gaussian-splatting/submodules/simple-knn" }
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
